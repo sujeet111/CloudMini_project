@@ -9,13 +9,22 @@ def index():
 	return render_template('index.html')
 
 
-@web_site.route('/upload') #https://www.javatpoint.com/flask-file-uploading
-def upload_file():#code for file upload
-  return render_template('upload.html')
+@web_site.route('/upload')
+# https://www.javatpoint.com/flask-file-uploading
+# https://www.youtube.com/watch?v=DsgAuceHha4&ab_channel=PrettyPrinted
+def upload_file():
+  #code for file upload
+  passkey= ''
+  file_contents= ''
+  email= ''
+  to_email= ''
+  file_id = db_upload(passkey, file_contents, email, to_email)#returns generated file_id 
+  return render_template('upload.html', file_id= file_id)
 
 
 @web_site.route('/download') 
-#https://roytuts.com/how-to-download-file-using-python-flask/
+# https://roytuts.com/how-to-download-file-using-python-flask/
+# https://www.youtube.com/watch?v=DsgAuceHha4&ab_channel=PrettyPrinted
 #code for file download(ask for file id)
 #pass file_id to next function
 def download_file():
