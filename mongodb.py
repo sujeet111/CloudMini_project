@@ -23,9 +23,6 @@ def connect_db():
 
 def db_upload(passkey, file_loc = '', email = '', to_email = '') :
   #https://dev.to/thenishant/store-images-in-mongodb-via-python-2g73
-
-  
-
   data_dict = {}
   data_dict['file_id']= '' #generate a fileid
   data_dict['passkey']= passkey
@@ -43,8 +40,9 @@ def db_upload(passkey, file_loc = '', email = '', to_email = '') :
 
 
 def db_download(file_id):
-  db.data_collected.find({"file_id":file_id})
-
+  x = db.data_collected.find({"file_id":file_id})
+  x.file_id
+  x.file
 
 # connect_db()
 # db_upload(1234,1234)

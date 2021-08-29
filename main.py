@@ -15,8 +15,8 @@ def index():
 def upload_file():
   #code for file upload
   passkey= ''
-  file_contents= ''
-  email= ''
+  file_contents= ''#file loc
+  email= ''#user email
   to_email= ''
   file_id = db_upload(passkey, file_contents, email, to_email)#returns generated file_id 
   return render_template('upload.html', file_id= file_id)
