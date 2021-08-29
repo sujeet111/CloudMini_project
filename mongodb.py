@@ -1,5 +1,5 @@
 #use this if any space is required
-import gridfs
+# import g/ridfs
 import os
 import pymongo
 import pytz
@@ -29,16 +29,16 @@ def db_upload(passkey, file_loc = '', email = '', to_email = '') :
   data_dict = {}
   data_dict['file_id']= '' #generate a fileid
   data_dict['passkey']= passkey
-  data_dict['file_contents']= file_contents
+  data_dict['file_contents']= ''
   data_dict['email']= email
   data_dict['to_email']= to_email
   data_dict['datetime']= caltime()
   db.data_collected.insert_one(data_dict)#user data
 
-  fs = gridfs.GridFS(db)
-  with open(file_loc, 'rb') as f:
-    contents = f.read()
-  fs.put(contents,file_id= file_id)
+  # fs = gridfs.GridFS(db)
+  # with open(file_loc, 'rb') as f:
+  #   contents = f.read()
+  # fs.put(contents,file_id= file_id)
   # return data_dict('file_id')
 
 
@@ -46,8 +46,8 @@ def db_download(file_id):
   db.data_collected.find({"file_id":file_id})
 
 
-connect_db()
-db_upload(1234,1234)
+# connect_db()
+# db_upload(1234,1234)
 # for x in db.data_collected.find():
 #     print(x)
 

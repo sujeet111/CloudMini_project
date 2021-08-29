@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_file
-from mongodb import connect_db, db_upload,db
+from mongodb import connect_db, db_upload
 
 web_site = Flask(__name__)
 connect_db()
