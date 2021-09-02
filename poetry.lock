@@ -26,6 +26,18 @@ docs = ["sphinx", "pallets-sphinx-themes", "sphinxcontrib-log-cabinet"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-pymongo"
+version = "2.3.0"
+description = "PyMongo support for Flask applications"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = ">=0.11"
+PyMongo = ">=3.3"
+
+[[package]]
 name = "itsdangerous"
 version = "1.1.0"
 description = "Various helpers to pass data to untrusted environments and back."
@@ -96,7 +108,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "76c2510335e26092fa20f871a4fbc04bb63137341664e5c0a3e589143451a096"
+content-hash = "f6f6e9a947fdebea03dc6e2ad46ecf38be53e74f9f7744b7f10c09745cfd1816"
 
 [metadata.files]
 click = [
@@ -106,6 +118,10 @@ click = [
 flask = [
     {file = "Flask-1.0.2-py2.py3-none-any.whl", hash = "sha256:a080b744b7e345ccfcbc77954861cb05b3c63786e93f2b3875e0913d44b43f05"},
     {file = "Flask-1.0.2.tar.gz", hash = "sha256:2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48"},
+]
+flask-pymongo = [
+    {file = "Flask-PyMongo-2.3.0.tar.gz", hash = "sha256:620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314"},
+    {file = "Flask_PyMongo-2.3.0-py2.py3-none-any.whl", hash = "sha256:8a9577a2c6d00b49f21cb5a5a8d72561730364a2d745551a85349ab02f86fc73"},
 ]
 itsdangerous = [
     {file = "itsdangerous-1.1.0-py2.py3-none-any.whl", hash = "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"},
