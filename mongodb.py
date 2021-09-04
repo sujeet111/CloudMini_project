@@ -41,8 +41,9 @@ def db_upload(passkey, file_loc = '', email = '', to_email = '') :
 
 def db_download(file_id):
   x = db.data_collected.find({"file_id":file_id})
-  x.file_id
-  x.file
+  # x.file_id
+  # x.file
+  return x
 
 # connect_db()
 # db_upload(1234,1234)

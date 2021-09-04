@@ -1,6 +1,6 @@
 from flask import Flask,request,url_for, render_template, request, send_file
 from flask_pymongo import PyMongo
-from mongodb import connect_db, db_upload
+from mongodb import connect_db, db_upload,db_download
 
 web_site = Flask(__name__)
 connect_db()
@@ -35,8 +35,9 @@ def upload_file():
 	# 		passkey=request.file['passkey']
 	# 		mongo.save_file(passkey.fileanme, passkey)
   										#code for file upload
-  file_id = db_upload(passkey, file_contents, email, to_email)	#returns generated file_id 
-	return render_template('upload.html', file_id= file_id)
+  # file_id = db_upload(passkey, file_contents, email, to_email)	#returns generated file_id 
+	# return render_template('upload.html', file_id= file_id)
+  pass
 
 
 
@@ -54,9 +55,12 @@ def download_file():
 #automatically start download and show send back to index with meta data
 #if image, the page should display the image along with some details;
 def retrivefile(file_id):
-  file_loc = "" #will get from db
-  return send_file(file_loc, as_attachment=True)
+  x = db_download(file_id)
+  user_passwd = ''
+  # if x.passkey == user_passwd:
+  #   pass
 
+  # # return
 
 
 
