@@ -64,4 +64,4 @@ def retrivefile(file_id):
 
 
 
-web_site.run(host='0.0.0.0', port=8080)
+web_site.run(host='0.0.0.0', port=8080, debug=True)
