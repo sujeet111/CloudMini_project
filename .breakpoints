@@ -1,0 +1,20 @@
+{
+  "files": {
+    "templates/css/flaticon.css": [
+      {
+        "id": "5157cdd8-753f-4385-9ab8-0dcfe0946a6a",
+        "line": 1,
+        "version": 1,
+        "index": 0
+      }
+    ],
+    "templates/upload.html": [
+      {
+        "id": "21eca156-b138-49d5-89ed-b95a6cf5291b",
+        "line": 201,
+        "version": 398,
+        "index": 8740
+      }
+    ]
+  }
+}

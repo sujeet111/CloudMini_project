@@ -4,6 +4,8 @@ import os
 import pymongo
 import pytz
 from datetime import datetime
+from random import randint
+ 
 
 
 def caltime():
@@ -21,29 +23,28 @@ def connect_db():
   db = client.user_data_db
   print('*'*3,'connected to Mongodb database:',db.name,'*'*3)
 
-def db_upload(passkey, file_loc = '', email = '', to_email = '') :
+def db_upload(code,path,file_name) :
   #https://dev.to/thenishant/store-images-in-mongodb-via-python-2g73
-  data_dict = {}
-  data_dict['file_id']= '' #generate a fileid
-  data_dict['passkey']= passkey
-  data_dict['file_contents']= ''
-  data_dict['email']= email
-  data_dict['to_email']= to_email
-  data_dict['datetime']= caltime()
-  db.data_collected.insert_one(data_dict)#user data
-
-  # fs = gridfs.GridFS(db)
-  # with open(file_loc, 'rb') as f:
-  #   contents = f.read()
-  # fs.put(contents,file_id= file_id)
-  # return data_dict('file_id')
+    data_dict = {}
+    n = 4
+    range_start = 10**(n-1)
+    range_end = (10**n)-1
+    passkey = randint(range_start, range_end)
+    data_dict['_id']= code #generate a fileid
+    data_dict['passkey']= passkey
+    data_dict['path']= path
+    data_dict['file_name'] = file_name
+    data_dict['datetime']= caltime()
+    db.data_collected.insert_one(data_dict)#user data
+    return data_dict
 
 
-def db_download(file_id):
-  x = db.data_collected.find({"file_id":file_id})
-  # x.file_id
-  # x.file
-  return x
+def db_download(file_id,passkey):
+    x = db.data_collected.find({"file_id":file_id})
+    if passkey == x.passkey:
+        return x
+    else:
+        return None
 
 # connect_db()
 # db_upload(1234,1234)
