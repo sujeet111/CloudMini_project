@@ -16,13 +16,13 @@
     <!-- favicon link -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='images/fs.png') }}" />
     <!-- favicon link End -->
+    
 </head>
 <!-- Header End -->
 <!-- Body Start -->
-
 <body>
     <!-- color picker starts -->
-    <div id="style-switcher" class="hs_color_set">
+    <!-- <div id="style-switcher" class="hs_color_set">
         <div>
             <h3>color options</h3>
             <ul class="colors">
@@ -48,7 +48,7 @@
         </div>
         <div class="bottom"> <a href="" class="settings"><i class="fa fa-gear fa-spin"></i></a> </div>
     </div>
-    <!-- color picker ends-->
+    color picker ends -->
    
     <!--Menu Start-->
     <div class="eco_header">
@@ -62,7 +62,7 @@
                         <!--navbar-header-->
                         <div id="main-nav" class="collapse navbar-collapse padding_left">
                             <ul class="nav navbar-nav my_menu">
-                                <li class="eco_pos_rel"><a href="homepage.html">HOME</a>
+                                <li class="eco_pos_rel"><a href={{ url_for('homepage') }}>HOME</a>
                         
                                 </li>
                                    
@@ -73,7 +73,7 @@
                                 <li class="eco_pos_rel"><a href="#" class="active">upload</a>
                                     
                                 </li>
-                                <li class="eco_bigmenu"><a href={{ url_for('download_file') }}>>Download</a>
+                                <li class="eco_bigmenu"><a href={{ url_for('download_file') }}>Download</a>
                                     
                                 </li>
                                 </li>
@@ -100,11 +100,11 @@
                 <div class="eco_page_title">
                     <h4 class="text-uppercase">Upload your files</h4>
                 </div>
-                <ol class="breadcrumb">
+                <!-- <ol class="breadcrumb">
                     <li><a href="homepage.html">Home <i class="fa fa-angle-double-right"></i></a>
                     </li>
                     <li class="active">Upload</li>
-                </ol>
+                </ol> -->
             </div>
         </div>
     </div>
@@ -112,57 +112,71 @@
     <!--Inner Container Start-->
     <!--eco_mapdiv strat-->
     </div>
-    <!--eco_mapdiv end-->
+
+        <!--eco_contactForm Start-->
     <div class="eco_inner_page_container">
         <div class="container">
+         <div class="eco_contact_page padder_top_50 padder_bottom_50" padding-bottom:="" 0px;="" style="
+    padding-bottom: ;
+    padding-bottom: 0px;
+">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="eco_contact_form">
+                           <form action="/upload" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" name="file" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="btn" value="Upload" id="em_submit" class="btn btn-primary">
+                                <p id="err"></p>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!--eco_mapdiv end-->
+    <!-- <div class="eco_inner_page_container"> -->
+        <div class="container">
 			<div class="row">
-				<div class="eco_img_wraper">
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padder_bottom_40">
-						<div class="eco_img_content"> <img src="{{ url_for('static',filename='images/aaaboutuss.png') }}" class="img-responsive" alt="">
-							<div class="eco__blog_head padder_top_20">
+				<div class="eco_img_wraper" style="
+    padding-top: 0px;
+">
+          </div>
+					<!-- <<div class="eco_img_content"> <img src="{{ url_for('static',filename='images/aaaboutuss.png') }}" class="img-responsive" alt="">!-- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 padder_bottom_40"> -->
+						
+							<div class="eco__blog_head">
 								<h4 class="text-uppercase"><a href="#" class="eco_color4">Upload</a></h4>
-								<div class="eco_blog_info">
-									<div class="eco_blog_icon"><i class="fa fa-pencil"></i>
-									</div>
+								<!-- <div class="eco_blog_info">
+									<!-- <div class="eco_blog_icon"><i class="fa fa-pencil"></i> -->
+									<!-- </div> -->
 							</div>
 							<p><span class="eco_dropcap"></span>It is really easy to share your files. After you complete an upload, a download link will be generated. You can share this link with anyone and when they visit this link they will see a download button and get your files easily.&nbsp;<strong></p>
 							<p></p>
-							<div class="eco_blockquote_green">
+							<!-- <div class="eco_blockquote_green">
 								<blockquote>
 									</p>
 									<footer>
 									</footer>
 								</blockquote>
-							</div>
-							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+							</div> -->
+							<!-- <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 								</p>
 							</div>
 							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 								</p>
-							</div>
-							<p class="gallery clearfix eco_mbottom_50">
+							</div> -->
+							<!-- <p class="gallery clearfix eco_mbottom_50">
 								<a href="images/aboutus.png" data-gal="prettyPhoto"><img src="images/aaboutus.png" class="img-responsive" alt="">
-								</a>
+								</a> -->
 						
     <!--eco_contactForm Start-->
     
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <p>     <label name="file"> File</label>
-                <input type="file" name="file" value="" required>
-            <br>
-                <input type=submit value='Upload'>				
-        </form>
-    
-                          
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="eco_contact_info">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!--eco_contactForm end-->
     <!--Breadcrumb End-->
    
@@ -196,6 +210,51 @@
     <script src="http://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
     <!--Script End-->
     <!--Body End-->
+<!-- <div><div>
+<div class="container" style=" margin-top:50px font-size:10px min-height: width:50%">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %} 
+		  <div class="alert alert-warning alert-dismissible" >
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<h2>{{message}}</h2>
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+  </div> -->
+
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> -->
+    <!-- https://pythonprogramming.net/flash-flask-tutorial/
+
+
+
+  {%for messsage in get_flashed_messages() %}
+  <h2>{{message}}</h2>
+  {% endfor %}
+</div> -->
+				</div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+<div class="container-fluid" style="min-height:50%">
+  {% with messages = get_flashed_messages() %} 
+    {% if messages %} 
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+        {{message}}
+      </div>
+      {% endfor %} 
+    {% endif %} 
+  {% endwith %}
+</div>
+
 </body>
 
 </html>

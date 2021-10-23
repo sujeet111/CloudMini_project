@@ -30,7 +30,7 @@ def db_upload(code,path,file_name) :
     range_start = 10**(n-1)
     range_end = (10**n)-1
     passkey = randint(range_start, range_end)
-    data_dict['_id']= code #generate a fileid
+    data_dict['_id']= int(code) #generate a fileid
     data_dict['passkey']= passkey
     data_dict['path']= path
     data_dict['file_name'] = file_name
@@ -40,11 +40,13 @@ def db_upload(code,path,file_name) :
 
 
 def db_download(file_id,passkey):
-    x = db.data_collected.find({"file_id":file_id})
-    if passkey == x.passkey:
-        return x
-    else:
-        return None
+    x = db.data_collected.find({"_id":file_id},{'id':1,'passkey':1,'file_name':1})
+    for i in x:
+        if passkey == i['passkey']:
+            print('success')
+            return i
+        else:
+            return None
 
 # connect_db()
 # db_upload(1234,1234)
