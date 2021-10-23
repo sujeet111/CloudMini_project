@@ -33,10 +33,6 @@
 </head>
 <!-- Header End -->
 
-  {%for messsage in get_flashed_messages() %}
-  <h2>{{message}}</h2>
-  {% endfor %}
-
 <!-- Body Start -->
 
 <body>
@@ -144,6 +140,12 @@
                                 <p id="err"></p>
                             </div>
                           </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
                      
                             
                     
@@ -178,8 +180,8 @@
 								<!-- <a <img src="{{ url_for('static',filename='images/aaaboutuss.png') }}" -->
 								</a>
 							</p>
-							
-			</div>
+						</div>
+          </div>
         </div>
     </div>
  
@@ -212,6 +214,32 @@
     <script src="http://maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
     <!--Script End-->
     <!--Body End-->
+
+
+				</div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+        </div style="min-height:50px"></div>
+<!-- <div class="container-fluid" style="min-height:50%">
+  {% with messages = get_flashed_messages() %} 
+    {% if messages %} 
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+        {{message}}
+      </div>
+      {% endfor %} 
+    {% endif %} 
+  {% endwith %}
+</div> -->
+
+
+
+
 </body>
 
 </html>

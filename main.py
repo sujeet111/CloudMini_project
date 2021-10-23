@@ -62,8 +62,8 @@ def download_file():
             azure_download_file(response["file_name"])
             return send_from_directory(directory=DOWNLOAD_FOLDER, filename=response['file_name'],as_attachment=True)
         else:
-            flash("sahi password dal re")
-            pass
+            return render_template('download.html')
     return render_template('download.html')
+
 
 web_site.run(host='0.0.0.0', port=8080, debug=True)
