@@ -12,18 +12,14 @@ web_site.secret_key = 'hsjdbf65gfd634dag365aerrt384'
 connect_db()
 UPLOAD_FOLDER = os.getcwd() + '/buffer/upload_buffer/'
 DOWNLOAD_FOLDER = os.getcwd() + '/buffer/download_buffer/'
-print(UPLOAD_FOLDER)
 
 
 @web_site.route('/')
-#nothing required here ig
 def homepage():
 	return render_template('homepage.html')
 
 
 @web_site.route('/upload', methods=['POST','GET'])
-								# https://www.javatpoint.com/flask-file-uploading
-								# https://www.youtube.com/watch?v=DsgAuceHha4&ab_channel=PrettyPrinted
 def upload_file():
     if(request.method == 'POST'):
         f=request.files['file']
@@ -34,10 +30,9 @@ def upload_file():
         full_name = code + secure_filename(f.filename)
         
         path = UPLOAD_FOLDER + full_name
-        print(path)
         f.save(path)
        
-        azure_upload_file(full_name,path)#aws
+        azure_upload_file(full_name,path)#azure
         dic = db_upload(code ,path, full_name)#mongodb
         file_id = str(dic['_id'])
         passkey = str(dic['passkey'])
@@ -45,13 +40,7 @@ def upload_file():
         flash(message)
     return render_template("upload.html")
 
-
-
 @web_site.route('/download', methods=['POST','GET']) 
-# https://roytuts.com/how-to-download-file-using-python-flask/
-# https://www.youtube.com/watch?v=DsgAuceHha4&ab_channel=PrettyPrinted
-#code for file download(ask for file id)
-#pass file_id to next function
 def download_file():
     if(request.method == 'POST'):
         id = int(request.form['code'])
@@ -64,6 +53,5 @@ def download_file():
         else:
             return render_template('download.html')
     return render_template('download.html')
-
 
 web_site.run(host='0.0.0.0', port=8080, debug=True)
