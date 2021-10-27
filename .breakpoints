@@ -1,0 +1,36 @@
+{
+  "files": {
+    "azure.py": [
+      {
+        "id": "25f4e53c-9c2a-42ca-89d9-6b85de621216",
+        "line": 8,
+        "version": 147,
+        "index": 471
+      }
+    ],
+    "project/main.py": [
+      {
+        "id": "d6b161d3-cedd-4e39-9eaa-1c60abff095a",
+        "line": 20,
+        "version": 1,
+        "index": 587
+      }
+    ],
+    "templates/css/flaticon.css": [
+      {
+        "id": "5157cdd8-753f-4385-9ab8-0dcfe0946a6a",
+        "line": 1,
+        "version": 1,
+        "index": 0
+      }
+    ],
+    "templates/upload.html": [
+      {
+        "id": "21eca156-b138-49d5-89ed-b95a6cf5291b",
+        "line": 260,
+        "version": 945,
+        "index": 10970
+      }
+    ]
+  }
+}
